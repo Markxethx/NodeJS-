@@ -1,7 +1,10 @@
-setInterval(() => {
-    console.log('Hello World')
-}, 2000)
-console.log(`I will run first`)
-//process stays alive unless
-//Kill Process CONTROL + C
-//unexpected error
+const  { readFile } = require("fs");
+
+readFile("./content/first.txt", "utf-8", (err, data) => {
+    if(err) {
+        return;
+    }
+    else {
+        console.log(data);
+    }
+})
